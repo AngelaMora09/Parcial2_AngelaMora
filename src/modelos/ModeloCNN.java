@@ -24,7 +24,15 @@ public class ModeloCNN extends Modelo {
     @Override
     public double entrenar(Dataset dataset) {
         // TODO: implementar
-        return 0;
+        int maxEpocas = getLossPorEpoca().length;
+        int lossInicial = Math.max(10, numFiltros * 10);
+
+        for (int i = 0; i < maxEpocas; i++) {
+            int lossActual = Math.max(1, lossInicial - (i * 2));
+            registrarEpoca(lossActual);
+        }
+
+        return mejorLoss();
     }
 
     public int getNumFiltros() { return numFiltros; }
