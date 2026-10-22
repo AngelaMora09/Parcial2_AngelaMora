@@ -66,6 +66,7 @@ public abstract class Modelo {
         return metrica.calcular(this, "Loss");
     }
 
+
     // Getters encapsulados
     public String getNombre() { return nombre; }
     public int[] getLossPorEpoca() { return lossPorEpoca; }
